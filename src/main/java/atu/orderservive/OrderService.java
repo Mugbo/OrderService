@@ -14,9 +14,12 @@ public class OrderService {
 
     private static Map<String, Double> initializeProductPrices() {
         Map<String, Double> productPrices = new HashMap<>();
-        productPrices.put("productA", 15.0);
-        productPrices.put("productB", 20.0);
-        productPrices.put("productC", 25.0);
+        productPrices.put("Shoes", 15.0);
+        productPrices.put("Hats", 20.0);
+        productPrices.put("Tops", 10.0);
+        productPrices.put("Jumpers", 35.0);
+        productPrices.put("Socks", 5.0);
+        productPrices.put("Belts", 9.0);
         return productPrices;
     }
 
