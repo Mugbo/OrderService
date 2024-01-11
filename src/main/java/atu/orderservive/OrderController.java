@@ -1,12 +1,13 @@
 package atu.orderservive;
 
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Validated
 public class OrderController {
 
     private final OrderService orderService;
@@ -16,8 +17,8 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping("/confirmOrder")
-    public String confirmOrder(@RequestBody OrderDetails orderDetails){
-        return orderService.confirmOrder(orderDetails);
+    @PostMapping("/calculatePrice")
+    public double calculatePrice(@Valid @RequestBody OrderDetails orderDetails) {
+        return orderService.calculatePrice(orderDetails);
     }
 }
